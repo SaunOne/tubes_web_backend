@@ -1,0 +1,43 @@
+.btn-get-started{
+    background-color: #F44331;
+    font-weight: bold;
+    padding: 8px 12px 8px 12px;
+    border-radius: 30px;
+    font-size: 14px;
+    box-shadow: 2px 2px 2px 0px #858585;
+}
+
+.main {
+    
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    
+}
+
+.bg-color-orange{
+    background-color: #F44331;
+}
+
+.bg-color-blue1{
+    background-color: #A2D5F2;
+}
+
+.bg-color-blue2{
+    background-color: #07689F;
+}
+
+/*mreah jingga*/
+.text-red1{
+    color: #F44331;
+}
+/*biru muda*/
+.text-blue2{
+    color: #A2D5F2;
+}
+/*biru tua*/
+.text-blue3{
+    color: #07689F;
+}
+
+
+
