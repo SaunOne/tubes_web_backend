@@ -64,7 +64,7 @@
 
         .main {
 
-            border: solid 2px red;
+            /* border: solid 2px red; */
             padding: 0px;
             height: auto;
         }
@@ -111,15 +111,12 @@
                             <li>
                                 <div style="width: 100px;"></div>
                             </li>
-                            <li class="nav-item">
-                                <div class="nav-content text-blue3"> Laundry In</div>
-                            </li>
-                            <li>
-                                <div class="nav-content text-blue3"> Space Wallet</div>
-                            </li>
+                            
 
                         </ul>
                         <div class="d-flex">
+                            <div class="nav-content text-blue3"> Order</div>
+                            <div class="nav-content text-blue3"> Customize Layanan</div>
                             <div class="nav-content text-blue3"> History</div>
                             <div style="margin-right: 30px;" class="notif"><i class="fas fa-bell text-blue3"></i></div>
                             <div class="profile"><img style="margin-left: -8px;" src="{{asset('assets/images/profile1.jpg')}}" alt=""></div>
@@ -128,7 +125,7 @@
                 </div>
             </nav>
         </header>
-        <main class="main" style="border: solid 2px red;">
+        <main class="main" >
             @yield('content')
         </main>
         <footer class="footer">

@@ -1,10 +1,10 @@
 @extends('../layout/homepage_owner')
 
+<<?php
+    $nav_list = 1;
+?>
 
 <style>
-
-    
-    
     .col {
         /* border: solid 1px black; */
     }
@@ -16,8 +16,11 @@
         background-color: white;
         position: fixed;
         width: 65%;
+        left: 0;
         z-index: 1;
     }
+
+    .row-box {}
 
     .v-center {
         display: flex;
@@ -30,12 +33,34 @@
         font-weight: 500;
     }
 
+    .box-content2 {
+        max-height: 800vh;
+        overflow: hidden;
+        padding: 0px;
+
+    }
+
+
+
+    .box-content2 {
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* Internet Explorer/Edge */
+    }
+
+    .title-order {
+        font-weight: 800;
+
+    }
+
+
+
     .isi-content {
-        margin: 20px 5%;
+        margin: 160px 5% 0px 5%;
         display: flex;
         flex-direction: column;
-      
-        overflow: auto;
+
     }
 
     .card_body {
@@ -65,6 +90,40 @@
         overflow: hidden;
         box-shadow: 0pc 0px 5px 0px rgba(0, 0, 0, 0.4);
         margin: 8px auto;
+    }
+
+
+    .cal-body {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        text-align: center;
+    }
+
+    .hari {
+        font-size: 16px;
+        color: rgb(96, 96, 96);
+        font-weight: bold;
+    }
+
+    .title h3 {
+        margin-top: 30px;
+    }
+
+    .title i {
+        margin-top: 40px;
+    }
+
+    .hover {
+        font-size: 22px;
+        font-weight: bold;
+        transform: translate(0, -15px);
+    }
+
+    .tanggal {
+        font-size: 20px;
+        margin-top: 10px;
+        font-weight: bold;
     }
 
 
@@ -101,6 +160,11 @@
         border: solid 0.5px #6d6c6c;
         border-radius: 10px;
 
+
+    }
+
+    .card_detail p {
+        margin-bottom: 5px;
     }
 
     .card_desc {
@@ -187,6 +251,9 @@
     #search {
         box-shadow: 0px 0px 3px #888888;
         width: 100%;
+        height: 35px;
+        font-size: 14px;
+
     }
 
 
@@ -239,7 +306,9 @@
         margin-left: 20px;
     }
 
-    .card2-img {}
+    .card2-img {
+        font-size: 28px;
+    }
 
     .card2_img-body {
         display: flex;
@@ -287,11 +356,63 @@
 
     }
 
+    .card2_detail p {
+        font-size: 10px;
+        margin-bottom: 8px;
+    }
+
+    .card2_detail strong {
+        font-size: 10px;
+        border: solid 1px #6d6c6c;
+        padding: 0px 8px;
+        border-radius: 10px;
+    }
+
+    .cek-detail {
+        font-size: 10px;
+        font-weight: bold;
+        color: white;
+        background-color: royalblue;
+        border-radius: 10px;
+        border: none;
+        width: 100px;
+
+    }
+
     .card2_desc {
         font-size: 8px;
 
         color: #6d6c6c;
 
+    }
+
+    .card2_title-detail {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .cal-box {
+        display: flex;
+        justify-content: center;
+    }
+
+    .app-bar-p .search1 {
+        display: none;
+    }
+
+    #s2 {
+        margin-top: 20px;
+        display: none;
+    }
+
+    .nav-list:hover {
+        font-weight: bold;
+        color: #07689F;
+    }
+
+    #element.active {
+        font-weight: bold;
+        color: #07689F;
     }
 
     @media (max-width: 1200px) {
@@ -302,6 +423,13 @@
         .card_info i {
             display: block;
             box-sizing: content-box;
+        }
+
+        .card2_detail strong {
+            font-size: 8px;
+            border: solid 1px #6d6c6c;
+            padding: 0px 6px;
+            border-radius: 10px;
         }
 
         .card_size-btn {}
@@ -317,6 +445,28 @@
 
         }
 
+        .cek-detail {
+            width: 80px;
+        }
+
+        .card2_title-detail {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .card2_desc2 {
+            display: none;
+        }
+
+        .card2_desc3 {
+            display: block;
+        }
+
+        .tgl-4 {
+            display: none;
+        }
+
+
     }
 
     @media (max-width:766px) {
@@ -324,6 +474,29 @@
         .card_img-body {
             display: none;
         }
+
+        .content-right {
+            display: none;
+        }
+
+        .app-bar2 {
+            width: 100%;
+        }
+    }
+
+    @media (max-width:500px) {
+        .s1 #search {
+            display: none;
+        }
+
+        #s2 {
+            display: block;
+        }
+
+        .isi-content {
+            margin: 0px 0px 0px 0px;
+        }
+
     }
 </style>
 
@@ -331,127 +504,99 @@
 
 <div class="container-fluid">
     <div class="row" style="height: auto;">
-        <div class="col-8 col">
-            <div class="app-bar2">
-                <div class="app-bar-p row d-flex align-items-end" style="height: 80px;">
-                    <div class="col">
-                        <h2>Transaksi Laundry Space</h2>
-                    </div>
-                </div>
-                <div class="app-bar-p row v-center" style="height: 50px;">
-                    <div class="col">
-                        <div class="nav-search v-center" style="">
-                            <div class="nav-list">Order</div>
-                            <div class="nav-list">Proses</div>
-                            <div class="nav-list">Done</div>
-                            <div id="search">
-                                <button class="float-left" id="button"><i class="fa fa-search"></i></button>
-                                <input id="input" class="search-btn" type="text" placeholder="Search">
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row" style="height: auto;">
-                <div class="col">
-                    <div class="isi-content">
-                        @for ($i = 0; $i < 10 ; $i++) <div class="card d-flex align-items-center" style="border:  solid1px;">
-                            <div class="row card_body">
-                                <div class="col-xxl-3 col-xl-3 col-md-4 col card_img-body">
-                                    <img class="card_img" src="{{asset('assets/images/profile3.png')}}" alt="">
-
-                                </div>
-                                <div class="col-xxl-5 col-xl-5 col-md-8 col card_info" style="text-align: start;">
-                                    <h1 class="card_title">
-                                        Moms Laundry
-                                    </h1>
-                                    <p class="card_desc" style="">
-                                        Layanan <Strong>Antar Jemput</Strong>
-                                    </p>
-                                    <p class="card_desc" style="">
-                                        Alamar : Jalan Babarsari, Caturtunggal Sebelaha sa das dasd as dasd asd s UPN
-                                    </p>
-                                    <i class="fa fa-arrow-right" style="transform: translate(105%,-25px);"></i>
-
-                                    <div class="card_size">
-                                        <a href="" class="card_size-btn">Accept</a>
-                                        <a href="" class="card_size-btn">Delice</a>
-                                    </div>
-                                </div>
-                                <div class="col-xxl-4 col-xl-4  card_detail" style="text-align: start;">
-                                    <h3 class="card_title">
-                                        Detail Pesanan
-                                    </h3>
-                                    <p class="card_desc" style="text-align: justify;">
-                                        Layanan <Strong>Antar Jemput</Strong>
-                                    </p>
-                                    <p class="card_desc" style="text-align: justify;">
-                                        Alamar : Jalan Babarsari, Caturtunggal
-                                    </p>
-
-                                </div>
-                            </div>
-                    </div>
-
-                    @endfor
-                    <div class="card">
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        @yield('data_order')
     </div>
-    <div class="col-4 col">
-        <div style="position: fixed; width: 31.7%;">
-            <div class="row" style="height: 200px;">
-                <div class="col-12" style="background-color: #00b4d1; ">
+    <div class="col-4 col content-right">
+        <div style="position: fixed; width: 31.7%;height: 100vh;overflow: auto;">
+            <div class="row" style="height: 180px;">
+                <div class="col-12" style=" ">
                     <div class="calender">
                         <div class="title d-flex" style="justify-content: space-between;">
-                            <h3>May 2021</h3>
-                            dsf
-                        </div>
-                        <div class="isi-calender" style="border: 1px solid ; height: 100px;">
+                            <h3 style="font-weight: 800; margin-top: 30px;">May 2021</h3>
+                            <div style="margin-right: 25px;">
 
+                                <i class="fas fa-chevron-left" style="margin-right: 20px;"></i>
+
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div class="isi-calender" style="margin-top: 12px; height: 100px;">
+                            <div class="row ">
+                                <div class="col cal-box" style="height: 100px;">
+                                    <div class="cal-body" style="width: 60px ;">
+                                        <div class="Hari">Senin</div>
+                                        <div class="tanggal">15</div>
+                                        <div class="hover" style="display: none;">.</div>
+                                    </div>
+
+                                </div>
+                                <div class="col cal-box" style=" height: 100px;">
+                                    <div class="cal-body" style="width: 60px ;">
+                                        <div class="Hari" style="color: #000;">Selasa</div>
+                                        <div class="tanggal" style="transform: translate(0,-5px);">16</div>
+                                        <div class="hover" style="display: block; ">.</div>
+                                    </div>
+
+                                </div>
+                                <div class="col cal-box" style=" height: 100px;">
+                                    <div class="cal-body" style="width: 60px ;">
+                                        <div class="Hari">Rabu</div>
+                                        <div class="tanggal">17</div>
+                                        <div class="hover" style="display: none;">.</div>
+                                    </div>
+
+                                </div>
+                                <div class="col cal-box tgl-4" style=" height: 100px;">
+                                    <div class="cal-body" style="width: 60px ;">
+                                        <div class="Hari">Kamis</div>
+                                        <div class="tanggal">18</div>
+                                        <div class="hover" style="display: none;">.</div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
                         </div>
                     </div>
 
 
+
                 </div>
             </div>
-            <div class="row" style="height: 250px;">
-                <div class="col" style="height: 300px;">
+            <div class="row " style="height: 250px; padding: 0px;">
+                <div class="col box-content1" style="">
                     <div class="isi-content2 " style="height: 100%; overflow: auto;">
                         @for ($i = 0; $i < 10 ; $i++) <div class="card2 d-flex align-items-center" style="border:  solid1px;">
                             <div class="row card2_body">
-                                <div class="col-xxl-3 col-xl-3 col-md-4 col card2_img-body">
+                                <div class="col-xxl-3 col-xl-3 col-md-4 col-lg-2 col card2_img-body">
                                     <h3 class="card2-img">
-                                        05
+                                        {{$i + 1}}
                                     </h3>
 
                                 </div>
-                                <div class="col-xxl-5 col-xl-5 col-md-8 col card2_info" style="position: relative; text-align: start;">
+                                <div class="col-xxl-5 col-xl-5 col-md-8 col-lg-6 col card2_info" style="position: relative; text-align: start;">
                                     <h1 class="card2_title">
-                                        Moms Laundry
+                                        Pandu
                                     </h1>
                                     <p class="card2_desc" style="">
                                         Layanan <Strong>Antar Jemput</Strong>
                                     </p>
-                                    
-                                    <i class="fas fa-chevron-down"></i> 
-                                </div>
-                                <div class="col-xxl-4 col-xl-4  card2_detail" style="text-align: start; position: relative;">
-                                    <h3 class="card2_title">
-                                        Detail Pesanan
-                                    </h3>
-                                    <p class="card2_desc" style="text-align: justify;">
-                                        Layanan <Strong>Antar Jemput</Strong>
-                                        
+                                    <p class="card2_desc" style="">
+                                        Alamat <Strong>Babarsari , sebelah kantor camat depok</Strong>
                                     </p>
-                                                               
-                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-lg-4  card2_detail" style="text-align: start; position: relative;">
+                                    <h3 class="card2_title-detail">
+                                        Jam : 17:00
+                                    </h3>
+                                    <p class="card2_desc card2_desc2" style="text-align: justify;">
+                                        Status : <Strong> Done </Strong>
+                                    </p>
+                                    <p class="card2_desc3" style="text-align: justify; display: none;">
+                                        <Strong> Done </Strong>
+                                    </p>
+                                    <button class="cek-detail">Cek Detail</button>
 
                                 </div>
                             </div>
@@ -459,9 +604,13 @@
                     @endfor
                 </div>
             </div>
+
             <div class="row" style="height: 250px;">
                 <div class="col">
-                    1
+                    <div class="grafik" style=" margin-top: 40px; margin-left: 10px   ;">
+                        <img style="width: 100%;" class="grafik-konten" src="{{asset('assets/images/grafik.png')}}" alt="">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -471,3 +620,21 @@
 </div>
 
 @endsection
+
+<script>
+
+    function en_dis(){
+        
+    }
+    
+    function toggleActive(element) {
+       
+        if (element.classList.contains('active')) {
+            element.classList.remove('active');
+            
+        } else {
+            element.classList.add('active');
+            
+        }
+    }
+</script>
