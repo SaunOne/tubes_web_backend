@@ -14,19 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('content/index');
+    return view('loginPage');
 });
 
-
-Route::get('/login', function () {
-    return view('content/login');
+Route::get('/registerPage', function () {
+    return view('registerPage');
 });
 
-Route::get('/owner', function () {
-    return view('owner/orderan');
+Route::get('/forgotPasswordPage', function () {
+    return view('forgotPasswordPage');
 });
 
-Route::get('/owner/customize_layanan', function () {
-    return view('owner/customize_layanan');
+Route::get('/showDataUserPage', function () {
+    return view('showDataUserPage');
 });
 
+Route::get('/createUserPage', function () {
+    return view('createUserPage');
+});
+
+Route::get('/verifikasiOwnerPage', function () {
+    return view('verifikasiOwnerPage');
+});
+
+Route::get('/editUserPage', function () {
+    return view('editUserPage');
+});
