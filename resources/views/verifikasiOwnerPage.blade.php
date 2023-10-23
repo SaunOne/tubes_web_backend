@@ -1,13 +1,13 @@
-@extends('sidebar2')
+@extends('sidebar')
 
 @section('content')
 <div class="container px-4 py-2">
     <h1>
         Verifikasi Laundry
     </h1>
-    <div class="container px-4 py-2 rounded" style="background-color: rgb(162, 213, 242)">
-        <div class="row row-cols-md-2 gx-5 p-3">
-            <div class="col mb-5">
+    <div class="container px-4 py-2 rounded" style="box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); background-color:rgb(162, 213, 242)">
+        <div class="row row-cols-1 row-cols-md-2 gx-3 gx-md-5 p-3">
+            <div class="col mb-3">
                 <div class="card shadow">
                     <div class="row">
                         <div class="img-fluid col-4 d-flex align-items-center justify-content-center">
@@ -19,7 +19,7 @@
                                 <p class="card-text my-0"><small class="text-body-secondary">Owner A</small></p>
                                 <p class="card-text my-1">Alamat: gang mawar no 7A Kledokan</p>
                                 <p class="card-text my-1">No telp: 0813123456789</p>
-                                <button class="btn btn-primary">Verifikasi</button>
+                                <a class="btn btn-primary" onclick="verificationAlert()">Verifikasi</a>
                               </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                                 <p class="card-text my-0"><small class="text-body-secondary">Owner B</small></p>
                                 <p class="card-text my-1">Alamat: gang mawar no 7A Kledokan</p>
                                 <p class="card-text my-1">No telp: 0813123456789</p>
-                                <button class="btn btn-primary">Verifikasi</button>
+                                <a class="btn btn-primary" onclick="verificationAlert()">Verifikasi</a>
                               </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                 <p class="card-text my-0"><small class="text-body-secondary">Owner C</small></p>
                                 <p class="card-text my-1">Alamat: gang mawar no 7A Kledokan</p>
                                 <p class="card-text my-1">No telp: 0813123456789</p>
-                                <button class="btn btn-primary">Verifikasi</button>
+                                <a class="btn btn-primary" onclick="verificationAlert()">Verifikasi</a>
                               </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                                 <p class="card-text my-0"><small class="text-body-secondary">Owner D</small></p>
                                 <p class="card-text my-1">Alamat: gang mawar no 7A Kledokan</p>
                                 <p class="card-text my-1">No telp: 0813123456789</p>
-                                <button class="btn btn-primary">Verifikasi</button>
+                                <a class="btn btn-primary" onclick="verificationAlert()">Verifikasi</a>
                               </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                                 <p class="card-text my-0"><small class="text-body-secondary">Owner E</small></p>
                                 <p class="card-text my-1">Alamat: gang mawar no 7A Kledokan</p>
                                 <p class="card-text my-1">No telp: 0813123456789</p>
-                                <button class="btn btn-primary">Verifikasi</button>
+                                <a class="btn btn-primary" onclick="verificationAlert()">Verifikasi</a>
                               </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                                 <p class="card-text my-0"><small class="text-body-secondary">Owner F</small></p>
                                 <p class="card-text my-1">Alamat: gang mawar no 7A Kledokan</p>
                                 <p class="card-text my-1">No telp: 0813123456789</p>
-                                <button class="btn btn-primary">Verifikasi</button>
+                                <a class="btn btn-primary" onclick="verificationAlert()">Verifikasi</a>
                               </div>
                         </div>
                     </div>
@@ -118,4 +118,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    const verificationAlert = () => alert("Laundry terverifikasi!");
+</script>
+
 @endsection

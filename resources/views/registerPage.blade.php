@@ -11,10 +11,10 @@
         }
 
         .container {
-            width: 500px;
             margin-top: 100px;
             background-color: white;
             border-radius: 15px;
+            width: 700px;
         }
 
         h1 {
@@ -29,16 +29,28 @@
             width: 100%;
         }
 
-        input[type="radio"] {
-            margin-left: 10px;
-        }
-
         .btn-custom {
             background-color: rgb(27, 135, 78);
             color: white;
             border: none;
-            padding-left: 15px;
-            padding-right: 15px;
+        }
+
+        @media only screen and (max-width: 1200px){
+            .container{
+                max-width: 90vh;
+            }
+        }
+
+        @media only screen and (max-width: 770px){
+            .container{
+                max-width: 68vh;
+            }
+        }
+
+        @media only screen and (max-width: 400px){
+            .container{
+                max-width: 30vh;
+            }
         }
     </style>
 </head>
@@ -52,13 +64,13 @@
                 Register
             </h1>
             <div class="row mb-2">
-                <div class="col-8">
+                <div class="col-md-8">
                     <label>
                         Nama
                     </label>
                     <input type="text" id="namaMahasiswa" class="form-control" placeholder="First Name" />
                 </div>
-                <div class="col-4">
+                <div class="col-md-4">
                     <label style="font-weight: bold;">
                         
                     </label>
@@ -66,18 +78,18 @@
                 </div>
             </div>
             <div class="row mb-2">
-                <div class="col-6">
+                <div class="col-md-6">
                     <label>
                         Email
                     </label>
                     <input type="text" id="email" class="form-control" placeholder="user@email.com"/>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6">
                     <label>
                       <tr>
                         <td><strong>Jenis Kelamin</strong></td>
                         </br>
-                        <td class="mt-4">
+                        <td class="mt-5">
                             <input type="radio" id="laki" name="jk" value="Laki-laki"/>
                             <label for="laki">Laki-laki</label>
                             <input type="radio" id="perempuan" name="jk" value="Perempuan"/>

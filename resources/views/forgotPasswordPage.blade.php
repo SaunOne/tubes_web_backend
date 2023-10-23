@@ -15,6 +15,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 600px;
         }
 
         .card {
@@ -59,6 +60,24 @@
             justify-content: space-between;
             margin-top: 1rem;
             margin-bottom: 30px;
+        }
+
+        @media only screen and (max-width: 1200px){
+            .container{
+                max-width: 90vh;
+            }
+        }
+
+        @media only screen and (max-width: 770px){
+            .container{
+                max-width: 68vh;
+            }
+        }
+
+        @media only screen and (max-width: 400px){
+            .container{
+                max-width: 43vh;
+            }
         }
     </style>
 </head>
