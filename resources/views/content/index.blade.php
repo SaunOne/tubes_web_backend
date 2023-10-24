@@ -336,7 +336,7 @@
                         Laundry Space, di mana kebersihan adalah prioritas
                         utama. Kami berkomitmen untuk memberikan pengalaman
                         laundry yang tak tertandingi, dengan pakaian yang tetap bersih dan wangi sepanjang hari. Temukan kenyamanan dan kelembutan layanan kami, dan nikmati pakaian yang selalu siap untuk digunakan</p>
-                    <div class="button"><button type="button" class="btn btn-danger btn-get-started">Get Started</button></div>
+                    <a href="{{ url('/login') }}" class="button"><button type="button" class="btn btn-danger btn-get-started">Get Started</button></a>
                 </div>
 
             </div>
@@ -440,7 +440,7 @@
                 <p class="p2">"Laundry Space, adalah lebih dari sekadar perusahaan laundry. Kami adalah mitra andal Anda dalam menjaga pakaian dan tekstil Anda tetap bersih, rapi, dan segar. Dengan komitmen kami untuk kualitas dan keamanan, kami menawarkan layanan laundry yang efisien dan praktis untuk memenuhi berbagai kebutuhan Anda.
                 </p>
                 <div class="btn-start" style="text-align: left; margin-top: 20px;">
-                    <div style="" class="button"><button type="button" class="btn btn-danger btn-get-started">Get Started</button></div>
+                    <a href="{{ url('/login') }}" style="" class="button"><button type="button" class="btn btn-danger btn-get-started">Get Started</button></a>
                 </div>
             </div>
         </div>
@@ -450,7 +450,7 @@
                 <h4 style="margin-top: 20px;"><strong class="text-blue3">Daftarkan Tempat</strong> <br><strong class="text-red1">Laundry </strong><strong class="text-blue3">Anda</strong></h4>
                 <p class="">Apakah Anda memiliki bisnis laundry yang berkualitas tinggi dan ingin meningkatkan jangkauan pelanggan Anda? Bergabunglah dengan kami di Laundry Space!</p>
                 <div class="btn-start" style="text-align: left; margin-top: 20px;">
-                    <div style="" class="button"><button type="button" class="btn btn-danger btn-get-started">Get Started</button></div>
+                    <a href="{{ url('/login') }}" style="" class="button"><button type="button" class="btn btn-danger btn-get-started">Get Started</button></a>
                 </div>
 
             </div>
