@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="{{asset('css/homepage.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Montserrat:wght@600;700&family=Poppins:ital,wght@0,100;0,200;0,400;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Montserrat:wght@600;700&family=Poppins:ital,wght@0,100;0,200;0,400;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
     <style>
-        
         body {
             padding: 0px;
             margin: 0px;
@@ -33,6 +32,7 @@
             background-color: white;
             align-items: center;
             margin: 0px;
+
         }
 
         .footer {
@@ -44,14 +44,14 @@
         .app-left {
             text-align: start;
             padding-left: 30px;
-        }
+        } 
 
         .img-appbar-logo {
             margin-left: 30px;
             height: 40px;
         }
 
-        .nav-content{
+        .nav-content {
             font-size: 14px;
             margin: auto 20px auto 0px;
             font-weight: bold;
@@ -76,8 +76,8 @@
             border-top-right-radius: 150px;
             background-color: #A2D5F2;
         }
-        
-        .profile{
+
+        .profile {
             height: 35px;
             width: 35px;
             overflow: hidden;
@@ -88,7 +88,41 @@
         .profile img {
             height: 100%;
             object-fit: cover;
-            
+
+        }
+
+        .email {
+            font-size: 14px;
+            color: grey;
+        }
+
+        #pf {
+            display: none;
+        }
+
+        .navbar-nav a,
+        .nav-item a {
+            font-size: 16px;
+            font-weight: bold;
+            color: #07689F;
+        }
+
+
+
+
+        @media (max-width:998px) {
+            .hilang {
+                display: none;
+            }
+
+            .offcanvas-body ul {
+                margin-left: 15px;
+            }
+
+            #notif a {
+                display: inline;
+            }
+
         }
     </style>
 
@@ -98,7 +132,7 @@
     <div class="container-fluid ut">
         <header class="app-bar" style="padding: 0px; margin: 0px;">
             <!-- Fixed navbar -->
-            <nav class="navbar app-bar navbar-expand-md  fixed-top " style="display: block;">
+            <!-- <nav class="navbar app-bar navbar-expand-md  fixed-top mb-4" style="display: block;">
                 <div style="line-height: 60px;" class="container-fluid">
                     <a class="navbar-brand" href="#">
                         <img class="img-appbar-logo" src="{{asset('assets/images/logo_horisontal.png')}}" alt="">
@@ -111,7 +145,7 @@
                             <li>
                                 <div style="width: 100px;"></div>
                             </li>
-                            
+
 
                         </ul>
                         <div class="d-flex">
@@ -123,15 +157,81 @@
                         </div>
                     </div>
                 </div>
-            </nav>
+            </nav> -->
+            <div class="container-fluid" style="position: fixed;">
+                <nav class=" navbar navbar-expand-lg " aria-label="Offcanvas navbar large">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="{{url('/')}}">
+                            <img class="img-appbar-logo" src="{{asset('assets/images/logo_horisontal.png')}}" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+                            <div class="offcanvas-header ">
+                                <div class="row" style="margin-left: 5px;">
+                                    <div class="col-3" style="display: flex; align-items: center;">
+                                        <div class="profile"><img style="margin-left: -8px;" src="{{asset('assets/images/profile1.jpg')}}" alt=""></div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Pandu Prakyasa Yoga</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="email col">
+                                                pandupandunet@gmail.com
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 " style="display: flex; align-items: center; justify-content: center;">
+                                        <a style="margin-right: -5px;" class="hllang nav-link" href="#"><i class="fas fa-bell text-blue3"></i></a>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul style="padding-top: 7px;" class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li id="notif" style="display: none;" class="notif nav-item">
+                                        <a class=" nav-link" aria-current="page" href="#">Notifikasi</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" aria-current="page" href="{{url('owner')}}">Order</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('owner/customize_layanan')}}">Customize Layanan</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">History</a>
+                                    </li>
+                                    <li style="margin: 2px 10px 0px 10px;" class="hilang">
+                                        <a style="margin-top: 4px;" class="hllang nav-link" href="#"><i class="fas fa-bell text-blue3"></i></a>
+                                    </li>
+
+                                    <li class="hilang">
+                                        <a style="margin-top: 0 px;" class="nav-link" href="#">
+                                            <div id="pf" class="hilang profile" style="display: block;"> <img style="  margin-left: -8px;" src="{{asset('assets/images/profile1.jpg')}}" alt=""></div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
         </header>
-        <main class="main" >
+        <main class="main">
             @yield('content')
         </main>
-        <footer class="footer">
-            
 
-        </footer>
     </div>
 
 
