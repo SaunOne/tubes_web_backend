@@ -1,0 +1,114 @@
+.profileL img {
+    height: 180px;
+    margin-top: -10px;
+}
+
+.profile {
+    text-align: center;
+    height: 100px;
+}
+
+.title-profile {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box-2 {
+    box-shadow: 0 0 5px rgba(91, 91, 91, 0.737);
+    border-radius: 25px;
+    margin: 20px 10px 20px 10px;
+    padding: 20px 10% 20px 10%;
+}
+
+.btn-edit {
+}
+
+.card {
+    box-shadow: 0 0 5px rgba(91, 91, 91, 0.737);
+}
+
+.card-body p {
+    font-size: 14px;
+}
+
+#setHarga {
+    font-size: 14px;
+    margin-top: 5px;
+    background-color: #07689f;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 100%;
+}
+
+#saveId{
+    font-size: 14px;
+    background-color: #00971e;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 60%; 
+    margin: 5px auto;
+}
+
+.modal-dialog{
+    margin: 0px;
+}
+
+.box-edit{
+    margin: 20px 0px 0px 30px;
+    border-radius: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    
+}
+
+.box-choose{
+    border: solid 0.3px rgb(117, 117, 117);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.form-check{
+    margin: 10px;
+}
+
+.input-group{
+    margin-top: 10px;
+}
+
+.d-none{
+    display: none;
+}
+
+.box-add{
+    
+    margin: 20px 0px 0px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(100, 100, 100, 0.5);
+    
+}
+
+.card-layanan{
+   margin-bottom: 40px;
+   margin-top: 20px;
+}
+
+.m-konten{
+    display: flex;
+    justify-content: center;
+}
+
+.box-konten-utama{
+    overflow: auto;
+    margin-top: 20px; 
+    height: 70vh; 
+}
+
+.title-add{
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

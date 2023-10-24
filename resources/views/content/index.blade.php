@@ -322,7 +322,7 @@
     }
 </style>
 
-@section('content')
+@section('contents')
 <div class="p-0 container-fluid" style="height: auto; position: relative;">
     <div class="p-0 container-fluid bg-1 bg-color-blue1"></div>
     <div class=" container-fluid isi-content text-center" style="width: 100%; height: auto; padding-bottom: 50px;">

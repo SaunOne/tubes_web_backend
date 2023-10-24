@@ -23,7 +23,7 @@ Route::get('/login', function () {
 });
 
 Route::get('/owner', function () {
-    return view('owner/orderan');
+    return view('owner/show/show_order');
 });
 
 Route::get('/owner/customize_layanan', function () {
