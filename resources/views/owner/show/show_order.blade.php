@@ -3,6 +3,12 @@
 
 @section('show_data')
 
+<style>
+.card:hover{
+        border: solid 2px #F44331;
+    }
+</style>
+
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -44,7 +44,7 @@
         .app-left {
             text-align: start;
             padding-left: 30px;
-        } 
+        }
 
         .img-appbar-logo {
             margin-left: 30px;
@@ -107,6 +107,38 @@
             color: #07689F;
         }
 
+        .navbar-nav {
+            display: flex;
+        }
+
+        .menu {
+            text-decoration: none;
+            text-transform: uppercase;
+            position: relative;
+            color: #262626;
+        }
+
+        .menu:before {
+            top: 25px;
+            content: '';
+            width: 0;
+            height: 5px;
+            background: #00bcd4;
+            position: absolute;
+            left: 0;
+            transition: .5s;
+        }
+
+        .navbar-nav li:hover a:before {
+            width: 70%;
+            transform: translateX(0%);
+            transform: translateY(100%);
+        }
+
+        
+
+
+
 
 
 
@@ -115,7 +147,7 @@
                 display: none;
             }
 
-            .offcanvas-body ul {
+            .offcanvas-bo-dy ul {
                 margin-left: 15px;
             }
 
@@ -192,6 +224,8 @@
                                 </div>
 
 
+
+
                             </div>
                             <div class="offcanvas-body">
                                 <ul style="padding-top: 7px;" class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -199,20 +233,20 @@
                                         <a class=" nav-link" aria-current="page" href="#">Notifikasi</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" aria-current="page" href="{{url('owner')}}">Order</a>
+                                        <a class="menu nav-link" aria-current="page" href="{{url('owner')}}">Order</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{url('owner/customize_layanan')}}">Customize Layanan</a>
+                                        <a class="menu nav-link" href="{{url('owner/customize_layanan')}}">Customize Layanan</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">History</a>
+                                        <a class="menu nav-link" href="#">History</a>
                                     </li>
                                     <li style="margin: 2px 10px 0px 10px;" class="hilang">
-                                        <a style="margin-top: 4px;" class="hllang nav-link" href="#"><i class="fas fa-bell text-blue3"></i></a>
+                                        <a style="margin-top: 4px;" class="notif hllang nav-link" href="#"><i class="fas fa-bell text-blue3"></i></a>
                                     </li>
 
                                     <li class="hilang">
-                                        <a style="margin-top: 0 px;" class="nav-link" href="#">
+                                        <a style=" margin-top: 0 px;" class="menu-profile nav-link" href="#">
                                             <div id="pf" class="hilang profile" style="display: block;"> <img style="  margin-left: -8px;" src="{{asset('assets/images/profile1.jpg')}}" alt=""></div>
                                         </a>
                                     </li>

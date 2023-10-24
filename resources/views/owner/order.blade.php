@@ -540,6 +540,7 @@ if (!isset($index)) {
                 @yield('show_data')
             </div>
         </div>
+
         <div class="col-4 col content-right">
             <div style="position: fixed; width: 31.7%;height: 100vh;overflow: auto;">
                 <div class="row" style="height: 180px;">
@@ -556,8 +557,8 @@ if (!isset($index)) {
                             </div>
                             <div class="isi-calender" style="margin-top: 12px; height: 100px;">
                                 <div class="row ">
-                                    <div class="col cal-box" style="height: 100px;">
-                                        <div class="cal-body" style="width: 60px ;">
+                                    <div class="col cal-box" style="height: 100px; " >
+                                        <div class="cal-body" style="width: 60px ; border: solid 1px #00b4d1;" >
                                             <div class="Hari">Senin</div>
                                             <div class="tanggal">15</div>
                                             <div class="hover" style="display: none;">.</div>
