@@ -187,10 +187,10 @@
                     <img class="img-appbar-logo" src="{{asset('assets/images/logo_horisontal.png')}}" alt="">
                 </a>
                 <div class="d-flex">
-                    <a style="font-size: 16px; text-decoration: none; font-weight: bold; color: #07689F;" href="" class="sign-in">Sign In</a>
-                    <button style="margin-right: 20px;" type="submit" class="btn-start btn btn-danger btn-get-started">
+                    <a style="font-size: 16px; text-decoration: none; font-weight: bold; color: #07689F;" href="{{ url('/registerPage') }}" class="sign-in">Sign In</a>
+                    <a style="margin-right: 20px;" type="submit" href="{{ url('/login') }}" class="btn-start btn btn-danger btn-get-started">
                         Get Started
-                    </button>
+                    </a>
 
                 </div>
 

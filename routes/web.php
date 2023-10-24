@@ -13,13 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('content/index');
 });
 
+Route::get('/registerPage', function () {
+    return view('admin/registerPage');
+});
 
 Route::get('/login', function () {
-    return view('content/login');
+    return view('admin/loginPage');
 });
 
 Route::get('/owner', function () {
@@ -30,3 +34,26 @@ Route::get('/owner/customize_layanan', function () {
     return view('owner/customize_layanan');
 });
 
+Route::get('/forgotPasswordPage', function () {
+    return view('admin/forgotPasswordPage');
+});
+
+Route::get('/owner', function () {
+    return view('owner/show/show_order');
+});
+
+Route::get('/showDataUserPage', function () {
+    return view('admin/showDataUserPage');
+});
+
+Route::get('/createUserPage', function () {
+    return view('admin/createUserPage');
+});
+
+Route::get('/verifikasiOwnerPage', function () {
+    return view('admin/verifikasiOwnerPage');
+});
+
+Route::get('/editUserPage', function () {
+    return view('admin/editUserPage');
+});
