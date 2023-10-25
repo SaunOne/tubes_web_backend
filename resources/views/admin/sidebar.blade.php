@@ -35,6 +35,36 @@
         font-family: 'Poppins', sans-serif;
       }
 
+      body {
+        position: relative; /* Make the body a positioned container */
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Place it behind the content */
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      body::after {
+        content: "";
+        background-image: url('images/laundryDesignRoom.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: blur(2px); /* Apply blur only to the image */
+        position: fixed; /* Fix the pseudo-element to the viewport */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2; /* Place it behind the content and the background color */
+      }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -194,40 +224,7 @@
       </symbol>
     </svg>
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
+    
 
     
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -268,7 +265,7 @@
   <h1 class="visually-hidden">Sidebars examples</h1>
 
   {{-- sidebar 1 --}}
-  <div style="width: 280px; display: none;" id="sidebar1" class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" >
+  <div style="width: 280px; background-color:rgb(162, 213, 242)" id="sidebar1" class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" >
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
       <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
       <span class="fs-4">Admin Page</span>
@@ -300,10 +297,10 @@
         </a>
       </li>
       <li class="nav-item">
-        <div id="collapseButton1" class="nav-link link-body-emphasis}}" style="color: black">
+        <a href="#" id="collapseButton1" class="nav-link link-body-emphasis}}" style="color: black">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#sidebar-collapse"/></svg>
           Collapse Navigation
-        </div>
+        </a>
       </li>
     </ul>
     <hr>
@@ -349,9 +346,9 @@
         </a>
       </li>
       <li>
-        <div id="collapseButton2" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Products">
+        <a href="#" id="collapseButton2" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Products">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#sidebar-collapse"/></svg>
-        </div>
+        </a>
       </li>
     </ul>
     <div class="dropdown border-top">
@@ -369,8 +366,8 @@
 
   
   <div class="container-fluid">
-    <div class="row d-flex py-4" style="background-color: rgb(249, 250, 251)">
-      <div class="col d-flex justify-content-end">
+    <div class="row d-flex py-4" style="background-color: rgba(0,0,0,0.5)">
+      <div class="col d-flex justify-content-end" style="color:white;">
         Welcome Admin Rico
         <span class="material-symbols-outlined mx-4">notifications</span>
       </div>

@@ -1,6 +1,12 @@
 @extends('admin/sidebar')
 
 @section('content')
+<style>
+    .hover-row:hover{
+        background-color: blue;
+    }
+</style>
+<h1 class="mt-3 mb-2" id="accountTitle" style="color: white;">User Account</h1>
 
 <div class="container px-4 py-2">
     <div class=row>
@@ -20,9 +26,8 @@
         </div>
     </div>
 
-    <h1 class="py-3">Data Account</h1>
-    <div class="table-responsive">
-        <table class="table table-warning">
+    <div class="table-responsive mt-3">
+        <table class="table table-hover table-warning">
             <thead>
                 <tr>
                     <th scope="col">No</th>
@@ -41,8 +46,8 @@
                     <td>andi12@yahoo.com</td>
                     <td>081312345678</td>
                     <td>Laki-laki</td>
-                    <td><a class="text-primary link-opacity-100-hover cursor-pointer">Edit</a></td>
-                    <td><a class="text-danger link-opacity-100-hover cursor-pointer">Hapus</a></td>
+                    <td><a href="#" class="text-primary link-opacity-100-hover cursor-pointer">Edit</a></td>
+                    <td><a href="#" class="text-danger link-opacity-100-hover cursor-pointer">Hapus</a></td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
@@ -50,8 +55,8 @@
                     <td>yanto66i@gmail.com</td>
                     <td>0858123456789</td>
                     <td>Laki-laki</td>
-                    <td><a class="text-primary link-opacity-100-hover cursor-pointer">Edit</a></td>
-                    <td><a class="text-danger link-opacity-100-hover cursor-pointer">Hapus</a></td>
+                    <td><a href="#" class="text-primary link-opacity-100-hover cursor-pointer">Edit</a></td>
+                    <td><a href="#" class="text-danger link-opacity-100-hover cursor-pointer">Hapus</a></td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
@@ -59,19 +64,38 @@
                     <td>tinit@facebook.com</td>
                     <td>081517237127</td>
                     <td>Perempuan</td>
-                    <td><a class="text-primary link-opacity-100-hover cursor-pointer">Edit</a></td>
-                    <td><a class="text-danger link-opacity-100-hover cursor-pointer">Hapus</a></td>
+                    <td><a href="#" class="text-primary link-opacity-100-hover cursor-pointer">Edit</a></td>
+                    <td><a href="#" class="text-danger link-opacity-100-hover cursor-pointer">Hapus</a></td>
                 </tr>
-                <tr>
+                <tr class="hover">
                     <th scope="row">4</th>
                     <td>Rini</td>
                     <td>rinii23@yahoo.com</td>
                     <td>0878182389453</td>
                     <td>Perempuan</td>
-                    <td><a class="text-primary link-opacity-100-hover cursor-pointer">Edit</a></td>
-                    <td><a class="text-danger link-opacity-100-hover cursor-pointer">Hapus</a></td>
+                    <td><a href="#" class="text-primary link-opacity-100-hover cursor-pointer">Edit</a></td>
+                    <td><a href="#" class="text-danger link-opacity-100-hover cursor-pointer">Hapus</a></td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get a reference to the dropdown element
+            var dropdown = document.getElementById('yourDropdown');
+
+            // Get a reference to the h1 element
+            var h1 = document.getElementById('accountTitle');
+
+            // Add an event listener to the dropdown to update the h1 text
+            dropdown.addEventListener('change', function() {
+                if (dropdown.value === 'option1') {
+                    h1.textContent = 'User Account';
+                } else if (dropdown.value === 'option2') {
+                    h1.textContent = 'Laundry Account';
+                }
+            });
+        });
+    </script>
 @endsection
