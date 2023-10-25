@@ -1,5 +1,5 @@
 @extends('../layout/homepage_user')
-{{-- @section('contents') --}}
+
 <!DOCTYPE html>
 <html lang="en">
 
