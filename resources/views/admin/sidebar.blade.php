@@ -31,6 +31,36 @@
 
 
   <style>
+    body {
+        position: relative; /* Make the body a positioned container */
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Place it behind the content */
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      body::after {
+        content: "";
+        background-image: url('images/laundryDesignRoom.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: blur(2px); /* Apply blur only to the image */
+        position: fixed; /* Fix the pseudo-element to the viewport */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2; /* Place it behind the content and the background color */
+      }
+
     * {
       font-family: 'Poppins', sans-serif;
     }
@@ -153,6 +183,10 @@
       background-color: transparent;
       height: 100vh;
       width: 100vw;
+    }
+
+    #btn_notif:hover{
+      cursor: pointer;
     }
   </style>
 
@@ -305,7 +339,7 @@
     <div class="show-notif" style=" position: fixed; z-index: 1000;">
       <div class="row">
         <div class="col">
-          <h5 class="title">Nontification</h5>
+          <h5 class="title">Notification</h5>
           <hr>
         </div>
       </div>
@@ -318,7 +352,7 @@
               </div>
               <div class="col-10">
                 <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
-                  ada orderan baru nihh!! silahkan diconfirmasi yaa
+                  Laundry baru terdaftar! Segera konfirmasi laundry berikut
                 </div>
               </div>
               <hr>
@@ -329,7 +363,7 @@
               </div>
               <div class="col-10">
                 <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
-                  ada orderan baru nihh!! silahkan diconfirmasi yaa
+                  12 User baru terdaftar!
                 </div>
               </div>
               <hr>
@@ -340,7 +374,7 @@
               </div>
               <div class="col-10">
                 <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
-                  ada orderan baru nihh!! silahkan diconfirmasi yaa
+                  Modifikasi user anda
                 </div>
               </div>
               <hr>
@@ -351,7 +385,7 @@
               </div>
               <div class="col-10">
                 <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
-                  ada orderan baru nihh!! silahkan diconfirmasi yaa
+                  Selamat datang di page Admin!
                 </div>
               </div>
               <hr>
@@ -370,7 +404,7 @@
 
     {{-- sidebar 1 --}}
     <div style="width: 280px; display: none;" id="sidebar1" class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
         <span class="fs-4">Admin Page</span>
       </a>
@@ -409,12 +443,12 @@
           </a>
         </li>
         <li class="nav-item">
-          <div id="collapseButton1" class="nav-link link-body-emphasis}}" style="color: black">
+          <a href="#" id="collapseButton1" class="nav-link link-body-emphasis}}" style="color: black">
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#sidebar-collapse" />
             </svg>
             Collapse Navigation
-          </div>
+          </a>
         </li>
       </ul>
       <hr>
@@ -436,7 +470,7 @@
 
     {{-- sidebar 2 --}}
     <div id="sidebar2" class="d-flex flex-column flex-shrink-0 bg-body-tertiary" style="width: 4.5rem;">
-      <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
+      <a href="#" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
         <span class="visually-hidden">Icon-only</span>
       </a>
@@ -470,11 +504,11 @@
           </a>
         </li>
         <li>
-          <div id="collapseButton2" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Products">
+          <a href="#" id="collapseButton2" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Products" data-bs-original-title="Products">
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#sidebar-collapse" />
             </svg>
-          </div>
+          </a>
         </li>
       </ul>
       <div class="dropdown border-top">
@@ -487,15 +521,15 @@
           <li>
             <hr class="dropdown-divider">
           </li>
-          <li><a class="dropdown-item" href="{{ url('/') }}">Sign out</a></li>
+          <li><a class="dropdown-item" href="{{ url('/login') }}">Sign out</a></li>
         </ul>
       </div>
     </div>
 
 
     <div class="container-fluid">
-      <div class="row d-flex py-4" style="background-color: rgb(249, 250, 251)">
-        <div class="col d-flex justify-content-end">
+      <div class="row d-flex py-4" style="background-color: rgba(0,0,0,0.5)">
+        <div class="col d-flex justify-content-end" style="color:white;">
           Welcome Admin Rico
           <span id="btn_notif" class="material-symbols-outlined mx-4">notifications</span>
         </div>

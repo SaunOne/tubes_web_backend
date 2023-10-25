@@ -8,7 +8,9 @@ if (!isset($index)) {
 
 
 <style>
-
+.c-hov:hover {
+        border: solid 1px #F44331;
+    }
 </style>
 
 <link rel="stylesheet" href="{{asset('css/customize_layanan.css')}}">
@@ -79,7 +81,7 @@ if (!isset($index)) {
                         <div class="box-konten-utama container-fluid ">
                             <div class="row" style="height: auto;">
                                 <div class="col" style="padding-top: 30px;">
-                                    <div class="card mb-3" style="max-width: 100%;">
+                                    <div class="c-hov card mb-3" style="max-width: 100%; ">
                                         <div class="row g-0">
                                             <div class="col-md-4">
                                                 <img style="object-fit: cover; height: 100%;" src="{{asset('assets/images/ilu_layanan2.jpg')}}" class="img-fluid rounded-start" alt="...">
@@ -92,7 +94,27 @@ if (!isset($index)) {
                                                     <button id="btn_edit" type="button" class="btn btn-primary" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit Layanan </button>
 
                                                 </div>
+                                                
                                             </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="c-hov card mb-3" style="max-width: 100%; ">
+                                        <div class="row g-0">
+                                            <div class="col-md-4">
+                                                <img style="object-fit: cover; height: 100%;" src="{{asset('assets/images/ilu_layanan1.jpg')}}" class="img-fluid rounded-start" alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 style="font-weight: bold;" class="card-title">Self Service</h5>
+                                                    <p class="card-text">Layanan antar-jemput laundry adalah layanan yang disediakan oleh usaha laundry atau jasa pencucian pakaian yang memungkinkan pelanggan untuk tidak perlu datang langsung ke tempat laundry untuk menjemput atau mengambil pakaian mereka yang akan dicuci dan dicuci setelah selesai. </p>
+
+                                                    <button id="btn_edit" type="button" class="btn btn-primary" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit Layanan </button>
+
+                                                </div>
+                                                
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -300,9 +322,9 @@ if (!isset($index)) {
 
                 <div class="box-konten-utama row" style="height: 78vh;">
                     <div class="m-konten col-md-6 col-12">
-                        <div class="card-layanan card" style="width: 18rem;">
-                            <img src="{{asset('assets/images/ilu_layanan2.jpg')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
+                        <div class="c-hov card-layanan card" style="width: 18rem;">
+                            <img src="{{asset('assets/images/ilu_layanan1.jpg')}}" class="card-img-top" alt="...">
+                            <div class=" card-body">
                                 <h5 class="card-title">Kiloan </h5>
                                 <p class="card-text">Layanan Kiloan Laundry adalah solusi praktis untuk mencuci pakaian Anda. Kami menawarkan pelayanan cuci kiloan yang berkualitas dengan harga terjangkau. Dengan teknik cuci modern dan deterjen berkualitas, kami akan merawat pakaian Anda dengan cermat.</p>
                             </div>
@@ -317,10 +339,10 @@ if (!isset($index)) {
 
                     </div>
                     <div class="m-konten col-md-6 col-12">
-                        <div class="card-layanan card" style="width: 18rem;">
+                        <div class="c-hov card-layanan card" style="width: 18rem;">
                             <img src="{{asset('assets/images/ilu_layanan2.jpg')}}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Self Service</h5>
+                            <div class=" card-body">
+                                <h5 class="card-title">Antar Jemput</h5>
                                 <p class="card-text">Kami memahami kesibukan Anda, itulah mengapa kami menawarkan layanan laundry antar jemput yang nyaman. Kami akan menjemput pakaian kotor Anda tepat di depan pintu, dan setelah dicuci, kami akan mengantarkannya kembali ke Anda. Nikmati kualitas layanan laundry terbaik tanpa harus keluar rumah. </p>
                             </div>
                             <div class="card-body">
@@ -334,10 +356,10 @@ if (!isset($index)) {
 
                     </div>
                     <div class="m-konten col-md-6 col-12">
-                        <div class="card-layanan card" style="width: 18rem;">
-                            <img src="{{asset('assets/images/ilu_layanan1.jpg')}}" class="card-img-top" alt="...">
+                        <div class="c-hov card-layanan card" style="width: 18rem;">
+                            <img src="{{asset('assets/images/ilu_layanan3.jpg')}}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Antar Jemput</h5>
+                                <h5 class="card-title">Self Service</h5>
                                 <p class="card-text">Dengan layanan self-service laundry kami, Anda memiliki kendali penuh atas proses pencucian pakaian Anda. Anda dapat mencuci, mengeringkan, dan melipat pakaian Anda sendiri menggunakan mesin cuci dan mesin pengering yang nyaman.</p>
                             </div>
                             <div class="card-body">
@@ -368,7 +390,7 @@ if (!isset($index)) {
                                 <div class="row g-3">
                                     <div class="col-sm-12">
                                         <label for="firstName" class="form-label">Deskripsi</label>
-                                        <textarea type="text" class="form-control" id="firstName" placeholder="" value="" required=""></textarea>
+                                        <input type="text" class="form-control" id="firstName" placeholder="" value="Kami memahami kesibukan Anda, itulah mengapa kami menawarkan layanan laundry antar jemput yang nyaman. Kami akan menjemput pakaian kotor Anda tepat di depan pintu, dan setelah dicuci, kami akan mengantarkannya kembali ke Anda. Nikmati kualitas layanan laundry terbaik tanpa harus keluar rumah." required=""></input>
                                         <div class="invalid-feedback">
                                             Valid first name is required.
                                         </div>
@@ -560,19 +582,19 @@ if (!isset($index)) {
                             </div>
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Deskripsi</label>
-                                <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="" value="Laundry baju anda, Bersih Wangi Seperti Baru"></textarea>
+                                <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="" value="Laundry baju anda, Bersih Wangi Seperti Baru">Kami memahami kesibukan Anda, itulah mengapa kami menawarkan layanan laundry antar jemput yang nyaman. Kami akan menjemput pakaian kotor Anda tepat di depan pintu, dan setelah dicuci, kami akan mengantarkannya kembali ke Anda. Nikmati kualitas layanan laundry terbaik tanpa harus keluar rumah.</textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Alamat</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" value="Laundry baju anda, Bersih Wangi Seperti Baru">
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" value="Jalan Babarsari Catur Tunggal, Sleman Yogyakarta">
                             </div>
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">No Telp</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" value="Laundry baju anda, Bersih Wangi Seperti Baru">
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" value="081237554462">
                             </div>
                             <div class="mb-3">
                                 <label for="formGroupExampleInput" class="form-label">Jam Oprasional</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" value="Laundry baju anda, Bersih Wangi Seperti Baru">
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="" value="07:00 - 17:00">
                             </div>
                             <div class="mb-3" style="display: flex; justify-content: center;">
                                 <button id="saveId" type="button" class="btn-save btn-setharga btn btn-primary" style="">Save</button>

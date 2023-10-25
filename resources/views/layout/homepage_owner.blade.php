@@ -96,6 +96,11 @@
             color: grey;
         }
 
+        .fas:hover{
+            font-size: 20px;
+            
+        }
+
         #pf {
             display: none;
         }
@@ -148,8 +153,8 @@
             border-radius: 10px;
             right: 150;
             top: 50;
-            height: 300px;
-            width: 200px;
+            height: 400px;
+            width: 300px;
             padding: 15px;
             overflow: auto;
             scroll-snap-type: y mandatory;
@@ -204,10 +209,10 @@
                 <div class="col">
                     <div class="body-notif">
                         <div class="row">
-                            <div class="cen col-3">
+                            <div class="cen col-2">
                                 <i class="fas fa-bell text-blue3"></i>
                             </div>
-                            <div class="col-9">
+                            <div class="col-10">
                                 <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
                                     ada orderan baru nihh!! silahkan diconfirmasi yaa
                                 </div>
@@ -215,10 +220,10 @@
                             <hr>
                         </div>
                         <div class="row">
-                            <div class="cen col-3">
+                            <div class="cen col-2">
                                 <i class="fas fa-bell text-blue3"></i>
                             </div>
-                            <div class="col-9">
+                            <div class="col-10">
                                 <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
                                     ada orderan baru nihh!! silahkan diconfirmasi yaa
                                 </div>
@@ -226,10 +231,10 @@
                             <hr>
                         </div>
                         <div class="row">
-                            <div class="cen col-3">
+                            <div class="cen col-2">
                                 <i class="fas fa-bell text-blue3"></i>
                             </div>
-                            <div class="col-9">
+                            <div class="col-10">
                                 <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
                                     ada orderan baru nihh!! silahkan diconfirmasi yaa
                                 </div>
@@ -237,10 +242,10 @@
                             <hr>
                         </div>
                         <div class="row">
-                            <div class="cen col-3">
+                            <div class="cen col-2">
                                 <i class="fas fa-bell text-blue3"></i>
                             </div>
-                            <div class="col-9">
+                            <div class="col-10">
                                 <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
                                     ada orderan baru nihh!! silahkan diconfirmasi yaa
                                 </div>
@@ -336,9 +341,7 @@
                                     <li class="nav-item">
                                         <a class="menu nav-link" href="{{url('owner/customize_layanan')}}">Customize Layanan</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="menu nav-link" href="#">History</a>
-                                    </li>
+                                  
                                     <li style="margin: 2px 10px 0px 10px;" class="menu hilang">
                                         <a id="btn_notif" style="margin-top: 4px;" class="notif hllang nav-link" data-bs-target="#show_notif"><i class="fas fa-bell text-blue3"></i></a>
                                     </li>

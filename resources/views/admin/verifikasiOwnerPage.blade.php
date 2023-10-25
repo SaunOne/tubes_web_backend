@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container px-4 py-2">
-    <h1>
+    <h1 style="color: white">
         Verifikasi Laundry
     </h1>
-    <div class="container px-4 py-2 rounded" style="box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); background-color:rgb(162, 213, 242)">
+    <div class="container px-4 py-2 rounded" style="color: white; background-color: rgba(0, 0, 0, 0.4); border-radius:10px;">
         <div class="row row-cols-1 row-cols-md-2 gx-3 gx-md-5 p-3">
             <div class="col mb-3">
                 <div class="card shadow">

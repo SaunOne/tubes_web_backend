@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="container px-4 py-3 my-4 rounded" style="box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);">
+    <div class="container px-4 py-3 my-4 rounded" style="color: white; background-color: rgba(0, 0, 0, 0.4); border-radius:10px;">
         <h1>
             Create User
         </h1>

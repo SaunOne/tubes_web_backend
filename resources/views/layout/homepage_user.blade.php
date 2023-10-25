@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>homepage_utama</title>
 
-    <!-- Google Font: Source Sans Pro -->
+    {{-- <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -15,7 +15,15 @@
     <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Boostrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/homepage.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Montserrat:wght@600;700&family=Poppins:ital,wght@0,100;0,200;0,400;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
     <style>
         body {}
 
@@ -185,8 +193,8 @@
             background-color: white;
             border: 1px solid grey;
             border-radius: 10px;
-            right: 150;
-            top: 50;
+            right: 15vh;
+            top: 9vh;
             height: 300px;
             width: 200px;
             padding: 15px;
@@ -317,7 +325,7 @@
                                         <a class="menu nav-link" href="#">History</a>
                                     </li>
                                     <li style="margin: 2px 10px 0px 10px;" class="hilang">
-                                        <a style="margin-top: 4px;" class=" nav-link" href=""><i class="menu fa fa-bell text-blue3"></i></a>
+                                        <a id="btn_notif" style="margin-top: 4px; cursor: pointer;" class=" nav-link"><i class="fa fa-bell text-blue3"></i></a>
                                     </li>
 
                                     <li class="hilang">
@@ -404,12 +412,13 @@
     </div>
 
 
-    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    {{-- <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 5.3 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
     <!-- AdminLTE App -->
-    <script src="{{ asset('js/adminlte.min.js') }}"></script>
+    <script src="{{ asset('js/adminlte.min.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

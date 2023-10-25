@@ -678,6 +678,9 @@ if (!isset($index)) {
     let a = -1;
     let hari = document.querySelectorAll('#hari');
     let tanggal = document.querySelectorAll("#tanggal");
+    let first = document.getElementById('cal');
+
+    
 
     function setTanggal() {
         let temp1 = a + 1;
@@ -703,7 +706,7 @@ if (!isset($index)) {
 
     document.addEventListener('DOMContentLoaded', function() {
 
-
+        first.classList.add('active-cal');
         const btn_right = document.getElementById('right');
         const btn_left = document.getElementById('left');
 

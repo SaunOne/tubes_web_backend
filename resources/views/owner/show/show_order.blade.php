@@ -4,37 +4,37 @@
 @section('show_data')
 
 <style>
-    .popup{
+    .popup {
         width: 400px;
         background-color: #fff;
         border-radius: 6px;
         position: absolute;
         left: 50%;
-        transform: translate(-50%,-50%) scale(0.2);
+        transform: translate(-50%, -50%) scale(0.2);
         z-index: 2000;
         text-align: center;
         padding: 0 30px 0 30px;
         color: #333;
-        box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-        transform: tranform 0,4s, top 0.4s;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        transform: tranform 0, 4s, top 0.4s;
         padding-bottom: 20px;
-       visibility: hidden;
+        visibility: hidden;
     }
 
-    .popup img{
+    .popup img {
         width: 100px;
         margin-top: -50px;
         border-radius: 50%;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    .popup h2{
+    .popup h2 {
         font-size: 38px;
         font-weight: 500px;
         margin: 30px 0 10px;
     }
 
-    .popup button{
+    .popup button {
         width: 100%;
         margin-top: 50px;
         padding: 10px 0;
@@ -44,28 +44,68 @@
         outline: 18px;
         border-radius: 4px;
         cursor: pointer;
-        box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-        
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
     }
 
-    .open-popup{
+    .open-popup {
         visibility: visible;
         top: 50%;
-        transform: translate(-50%,-50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
-    
+
+    .c-hov:hover{
+        width: 120px;
+        height: 30px;
+        cursor: pointer;
+    }
 
 </style>
 
-<!-- notif sukses laundry -->
 
-  <div class="popup" id="popup">
-        <img src="{{asset('assets/images/centang.png')}}" alt="">
-        <h2>Thank You</h2>
-        <p>Orderan Telah Diselesaikan</p>
-        <button id="ok" onclick="closePopup()" type="submit">OK</button>
+
+<div class="popup" id="popup">
+    <img src="{{asset('assets/images/centang.png')}}" alt="">
+    <h2>Thank You</h2>
+    <p>Orderan Telah Diselesaikan</p>
+    <button id="ok" onclick="closePopup()" type="submit">OK</button>
+</div>
+
+
+
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div  id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div style="background-color: green;" class="d-flex">
+            <div class="toast-body">
+                Accept Orderan Yosa
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
     </div>
-  
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div  id="deliceToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div style="background-color: red;" class="d-flex">
+            <div class="toast-body">
+                Delice Orderan Pandu
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div  id="readyToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div style="background-color: green;" class="d-flex">
+            <div class="toast-body">
+                Orderan Pandu Ready
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
 
 
 
@@ -88,7 +128,7 @@
                             <label for="recipient-name" class="col-form-label">Durasi</label>
                             <div style="width: 100%;" class="dropdown">
 
-                                <button  style="width: 100%; background-color: white; color: black; text-align: start;" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button style="width: 100%; background-color: white; color: black; text-align: start;" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Pilih
                                 </button>
                                 <ul class="dropdown-menu">
@@ -127,7 +167,7 @@
 
 
 
-<div class="col box-content2 " style="overflow: auto;border: #07689F; height: 80vh; display: block;" id="order_id" >
+<div class="col box-content2 " style="overflow: auto;border: #07689F; height: 80vh; display: block;" id="order_id">
     <div class="isi-content">
         @for ($i = 0; $i < 10 ; $i++) <div class="card-laundry card d-flex align-items-center" style="border:  solid1px;">
             <div class="row card_body">
@@ -147,8 +187,8 @@
                     <i class="fa fa-arrow-right" style="transform: translate(105%,-25px);"></i>
 
                     <div class="card_size">
-                        <div href="" class="card_size-btn">Accept</div>
-                        <div href="" class="card_size-btn">Delice</div>
+                        <div id="liveToastBtn" href="" class="c-hov card_size-btn">Accept</div>
+                        <div id="deliceBtn" href="" class="c-hov card_size-btn">Delice</div>
                     </div>
                 </div>
                 @if($i % 3 == 0)
@@ -189,7 +229,7 @@
 </div>
 
 <!-- proses id -->
-<div class="col box-content2 " style="overflow: auto;border: #07689F; height: 80vh; display: none;" id="proses_id" >
+<div class="col box-content2 " style="overflow: auto;border: #07689F; height: 80vh; display: none;" id="proses_id">
     <div class="isi-content">
         @for ($i = 0; $i < 10 ; $i++) <div class="card-laundry card d-flex align-items-center" style="border:  solid1px;">
             <div class="row card_body">
@@ -210,7 +250,7 @@
                     <i class="fa fa-arrow-right" style="transform: translate(105%,-25px);"></i>
 
                     <div class="card_size">
-                        <div href="" class="card_size-btn">Ready</div>
+                        <div id="readyBtn" href="" class="c-hov card_size-btn">Ready</div>
                         <div style="font-size: 14px;font-weight: bold; margin-right: 0px;">Dead Line 9 Oct 2023</div>
                     </div>
                 </div>
@@ -243,7 +283,7 @@
 
 <!-- done_id -->
 
-<div class="col box-content2 " style="overflow: auto;border: #07689F; height: 80vh; display: none;" id="done_id" >
+<div class="col box-content2 " style="overflow: auto;border: #07689F; height: 80vh; display: none;" id="done_id">
     <div class="isi-content">
         @for ($i = 0; $i < 10 ; $i++) <div class="card-laundry card d-flex align-items-center" style="border:  solid1px;">
             <div class="row card_body">
@@ -264,7 +304,7 @@
                     <i class="fa fa-arrow-right" style="transform: translate(105%,-25px);"></i>
 
                     <div class="card_size">
-                        <button id="finish" type="submit" onclick="openPopup()" style="background-color: green;" class="card_size-btn">Finish</button>
+                        <button id="finish" type="submit" onclick="openPopup()" style="background-color: green;" class="c-hov card_size-btn">Finish</button>
                         <div style="margin-right: 0px; font-size: 14px; font-weight: bold ;">Due Date 21 Oct 2023</div>
                     </div>
                 </div>
@@ -295,32 +335,74 @@
 </div>
 </div>
 
-@endsection
+
+
+
 
 <script>
-    
-    
-    function openPopup(){
+    function openPopup() {
         let popup = document.getElementById('popup');
         popup.classList.add('open-popup');
-   
-        
+
+
     }
 
-    function closePopup(){
+    function closePopup() {
         let popup = document.getElementById('popup');
         popup.classList.remove('open-popup');
-        
+
     }
 
     document.addEventListener('DOMContentLoaded', function() {
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+
+        const toastTrigger2 = document.getElementById('deliceBtn')
+        const toastLiveExample2 = document.getElementById('deliceToast')
+
+        const toastTrigger3 = document.getElementById('readyBtn')
+        const toastLiveExample3 = document.getElementById('readyToast')
+
+        
+
+        if (toastTrigger) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+            toastTrigger.addEventListener('click', () => {
+                toastBootstrap.show()
+            })
+        }
+
+        if (toastTrigger2) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample2)
+            toastTrigger2.addEventListener('click', () => {
+                toastBootstrap.show()
+            })
+        }
+
+        if (toastTrigger3) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample3)
+            toastTrigger3.addEventListener('click', () => {
+                toastBootstrap.show()
+            })
+        }
+
+
         const nav1 = document.getElementById('list_1');
         const nav2 = document.getElementById('list_2');
         const nav3 = document.getElementById('list_3');
         const order = document.getElementById('order_id');
         const proses = document.getElementById('proses_id');
         const done = document.getElementById('done_id');
-     
+
+        console.log(Notification.permission);
+
+        if (Notification.permission === 'granted') {
+            alert('We have permission!');
+        } else if (Notification.permission === 'denied') { // Ganti 'danied' menjadi 'denied'
+            Notification.requestPermission().then(permission => { // Ganti 'permision' menjadi 'permission'
+                console.log(permission);
+            });
+        }
 
         function changeView(change) {
             order.style.display = 'none';
@@ -350,3 +432,4 @@
         });
     });
 </script>
+@endsection

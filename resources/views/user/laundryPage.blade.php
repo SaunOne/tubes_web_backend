@@ -32,7 +32,7 @@
         .img-laundry {
             width: 100%;
             height: 100%;
-            object-fit: fill;
+            object-fit: cover;
             /* margin-left: 0px; */
             border-radius: 10px;
         }
@@ -163,9 +163,9 @@
                         <label for="komentar">Komentar</label>
                     </div>
                     <div class="mt-4 d-flex justify-content-end">
-                        <button type="button" class="btn" style="color: #F44331; background-color: white; width: 80px"
+                        <button onclick="resetUlasan()" type="button" class="btn" style="color: #F44331; background-color: white; width: 80px"
                             data-bs-dismiss="modal" aria-label="Close">Batal</button>
-                        <button type="button" class="btn btn-success">Simpan</button>
+                        <button onclick="reloadPage()" type="button" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Simpan</button>
                     </div>
                 </div>
             </div>

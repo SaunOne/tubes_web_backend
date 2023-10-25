@@ -105,6 +105,26 @@
             }
         }
     </style>
+    <div class="modal fade" id="konfirmasi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #014E87; text-align: center;">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: white; "><strong>Notifikasi</strong>
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <h4 style="color: #F44331"><strong>Apakah anda ingin Logout?</strong></h4>
+                    <div class="mt-4 d-flex justify-content-end">
+                        <button type="button" class="btn" style="color: #F44331; background-color: white; width: 80px"
+                            data-bs-dismiss="modal" aria-label="Close">Batal</button>
+                        <a href="{{ url('/login') }}" type="button" class="btn btn-primary">Konfirmasi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="isiSaldo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -334,8 +354,9 @@
                     <label for="alamat" class="form-label mt-3"><strong>Alamat</strong></label>
                     <textarea class="form-control" id="alamat" name="alamat" style="width: 100%;" rows="3" readonly>Jl. Babarsari 00</textarea>
                     <div class="row mt-3">
-                        <div class="col d-flex justify-content-end">
-                            <button type="button" class="btn btn-success" id="editButton">Ubah</button>
+                        <div class="col d-flex justify-content-between">
+                            <button id="isi" data-bs-toggle="modal" data-bs-target="#konfirmasi" type="button" class="btn btn-danger" id="logoutButton"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                            <button type="button" class="btn btn-success" id="editButton"><i class="fa-solid fa-pen-to-square"></i> Ubah</button>
                         </div>
                     </div>
                 </form>
@@ -370,7 +391,7 @@
                     <div class="mt-3 d-flex justify-content-end">
                         <button type="button" class="btn"
                             style="color: red; background-color: white; width: 80px" id="cancelButton">Batal</button>
-                        <button type="button" class="btn btn-success" id="saveButton">Simpan</button>
+                            <button type="button" class="btn btn-success" id="saveButton"><i class="fa-solid fa-floppy-disk"></i> Simpan</button>
                     </div>
                 </form>
             </div>
@@ -387,7 +408,7 @@
                 <div class="row">
                     <div class="col-xxl-6 mt-3">
                         <button type="button" class="btn btn-isi" id="isi" data-bs-toggle="modal"
-                            data-bs-target="#isiSaldo">Isi Saldo</button>
+                            data-bs-target="#isiSaldo"><i class="fa-solid fa-wallet"></i> Isi Saldo</button>
                     </div>
                 </div>
                 <h5 class="mt-3"><strong>Riwayat Transaksi</strong></h5>
