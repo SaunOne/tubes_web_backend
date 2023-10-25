@@ -113,7 +113,7 @@
 
         .menu {
             text-decoration: none;
-            text-transform: uppercase;
+
             position: relative;
             color: #262626;
         }
@@ -135,10 +135,33 @@
             transform: translateY(100%);
         }
 
+        .in-notif {
+            display: inline;
+            position: relative;
+            z-index: 10000;
+        }
+
+
+        .show-notif {
+            background-color: white;
+            border: 1px solid grey;
+            border-radius: 10px;
+            right: 150;
+            top: 50;
+            height: 300px;
+            width: 200px;
+            padding: 15px;
+            overflow: auto;
+            scroll-snap-type: y mandatory;
+        }
+
+        .box-notif {
+            background-color: transparent;
+            height: 100vh;
+            width: 100vw;
+        }
+
         
-
-
-
 
 
 
@@ -156,12 +179,88 @@
             }
 
         }
+
+        .cen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
     </style>
 
 </head>
 
 <body>
+    <!-- modal notif -->
+    <div  id="show_notif" class="box-notif" style="display: none;position: absolute; z-index: 1100;">
+        <div class="show-notif" style=" position: fixed; z-index: 1000;">
+            <div class="row">
+                <div class="col">
+                    <h5 class="title">Nontification</h5>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="body-notif">
+                        <div class="row">
+                            <div class="cen col-3">
+                                <i class="fas fa-bell text-blue3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
+                                    ada orderan baru nihh!! silahkan diconfirmasi yaa
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="cen col-3">
+                                <i class="fas fa-bell text-blue3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
+                                    ada orderan baru nihh!! silahkan diconfirmasi yaa
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="cen col-3">
+                                <i class="fas fa-bell text-blue3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
+                                    ada orderan baru nihh!! silahkan diconfirmasi yaa
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="cen col-3">
+                                <i class="fas fa-bell text-blue3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
+                                    ada orderan baru nihh!! silahkan diconfirmasi yaa
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <div class="container-fluid ut">
+
+
         <header class="app-bar" style="padding: 0px; margin: 0px;">
             <!-- Fixed navbar -->
             <!-- <nav class="navbar app-bar navbar-expand-md  fixed-top mb-4" style="display: block;">
@@ -190,10 +289,10 @@
                     </div>
                 </div>
             </nav> -->
-            <div class="container-fluid" style="position: fixed;">
+            <div class="container-fluid" style="position: fixed; z-index: 500;">
                 <nav class=" navbar navbar-expand-lg " aria-label="Offcanvas navbar large">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="{{url('/')}}">
+                        <a class="navbar-brand" href="{{url('/home_owner')}}">
                             <img class="img-appbar-logo" src="{{asset('assets/images/logo_horisontal.png')}}" alt="">
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
@@ -201,10 +300,10 @@
                         </button>
                         <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
                             <div class="offcanvas-header ">
-                                <div class="row" style="margin-left: 5px;">
-                                    <div class="col-3" style="display: flex; align-items: center;">
-                                        <div class="profile"><img style="margin-left: -8px;" src="{{asset('assets/images/profile1.jpg')}}" alt=""></div>
-                                    </div>
+                                <div class="row" style="margin-left: 5px; ">
+                                    <a href="{{url('/profile')}}" class="col-3" style="display: flex; align-items: center;">
+                                        <div id="profile_id" class="profile"><img style="margin-left: -8px;" src="{{asset('assets/images/profile1.jpg')}}" alt=""></div>
+                                    </a>
                                     <div class="col-7">
                                         <div class="row">
                                             <div class="col">
@@ -219,7 +318,6 @@
                                     </div>
                                     <div class="col-2 " style="display: flex; align-items: center; justify-content: center;">
                                         <a style="margin-right: -5px;" class="hllang nav-link" href="#"><i class="fas fa-bell text-blue3"></i></a>
-
                                     </div>
                                 </div>
 
@@ -230,7 +328,7 @@
                             <div class="offcanvas-body">
                                 <ul style="padding-top: 7px;" class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                     <li id="notif" style="display: none;" class="notif nav-item">
-                                        <a class=" nav-link" aria-current="page" href="#">Notifikasi</a>
+                                        <a class="menu nav-link" aria-current="page" href="#">Notifikasi</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="menu nav-link" aria-current="page" href="{{url('owner')}}">Order</a>
@@ -241,12 +339,12 @@
                                     <li class="nav-item">
                                         <a class="menu nav-link" href="#">History</a>
                                     </li>
-                                    <li style="margin: 2px 10px 0px 10px;" class="hilang">
-                                        <a style="margin-top: 4px;" class="notif hllang nav-link" href="#"><i class="fas fa-bell text-blue3"></i></a>
+                                    <li style="margin: 2px 10px 0px 10px;" class="menu hilang">
+                                        <a id="btn_notif" style="margin-top: 4px;" class="notif hllang nav-link" data-bs-target="#show_notif"><i class="fas fa-bell text-blue3"></i></a>
                                     </li>
 
                                     <li class="hilang">
-                                        <a style=" margin-top: 0 px;" class="menu-profile nav-link" href="#">
+                                        <a style=" margin-top: 0 px;" class="menu-profile nav-link" href="{{url('/profile')}}">
                                             <div id="pf" class="hilang profile" style="display: block;"> <img style="  margin-left: -8px;" src="{{asset('assets/images/profile1.jpg')}}" alt=""></div>
                                         </a>
                                     </li>
@@ -272,5 +370,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn_notif = document.getElementById('btn_notif');
+        const show_notif = document.getElementById('show_notif');
+
+        btn_notif.addEventListener('click', function() {
+            show_notif.style.display = 'block';
+        });
+        show_notif.addEventListener('click', function() {
+            show_notif.style.display = 'none';
+        });
+    });
+</script>
 
 </html>

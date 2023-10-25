@@ -404,18 +404,57 @@ if (!isset($index)) {
     }
 
 
-    
 
-    .hov_nav{
+
+    .hov_nav {
         font-weight: bold;
         color: white;
         font-size: 20px;
-        background-color: grey;
+        background-color: #F44331;
         padding: 2px 10px 2px 10px;
         border-radius: 20px;
     }
 
+    .card-laundry:hover {
+        border: solid 1px #F44331;
+    }
+
+    .hov-cal:hover div {
+        color: #07689F;
+    }
+
+    .hov-cal:active div {
+        color: #07689F;
+    }
+
+    .cal-box:active div {
+        font-weight: bold;
+    }
+
+    #right:hover {
+        color: #07689F;
+        font-weight: bold;
+    }
+
+    #left:hover {
+        color: #07689F;
+        font-weight: bold;
+    }
+
+    .active-cal {
+        color: #07689F;
+        font-weight: bold;
     
+    }
+
+
+
+    .l1:hover{
+        font-weight: bold;
+        font-size: 20px;
+        color: #07689F;
+    }
+
 
 
     @media (max-width: 1200px) {
@@ -505,7 +544,8 @@ if (!isset($index)) {
 
 @section('content')
 
-<div class="container-fluid">
+
+<div class="container-fluid" id="btn-search">
     <div class="row" style="height: auto;">
         <div class="col-md-8 col">
             <div class="app-bar2 ">
@@ -517,9 +557,9 @@ if (!isset($index)) {
                 <div class="s1 app-bar-p row v-center" style="height: fit-content;">
                     <div class="col">
                         <div class="nav-search v-center">
-                            <div id="list_1" class="nav-list hov_nav" onclick="toggleActive(this)">Order</div>
-                            <div id="list_2" class="nav-list" onclick="toggleActive(this)">Proses</div>
-                            <div id="list_3" class="nav-list" onclick="toggleActive(this)">Done</div>
+                            <div id="list_1" class="l1 nav-list hov_nav" onclick="toggleActive(this)">Order</div>
+                            <div id="list_2" class="l1 nav-list" onclick="toggleActive(this)">Proses</div>
+                            <div id="list_3" class="l1 nav-list" onclick="toggleActive(this)">Done</div>
                             <div class="search1" id="search">
                                 <button class="float-left" id="button"><i class="fa fa-search"></i></button>
                                 <input id="input" class="search-btn" type="text" placeholder="Search">
@@ -530,7 +570,7 @@ if (!isset($index)) {
                 <div id="s2" class=" app-bar-p row v-center search2" style="height: 50px;">
                     <div class="col">
                         <div id="search">
-                            <button class="float-left" id="button"><i class="fa fa-search"></i></button>
+                            <button class="float-left" id=""><i class="fa fa-search"></i></button>
                             <input id="input" class="search-btn" type="text" placeholder="Search">
                         </div>
                     </div>
@@ -550,113 +590,181 @@ if (!isset($index)) {
                                 <h3 style="font-weight: 800; margin-top: 30px;">October 2023</h3>
                                 <div style="margin-right: 25px;">
 
-                                    <i class="fas fa-chevron-left" style="margin-right: 20px;"></i>
+                                    <i id="left" class=" fas fa-chevron-left" style="margin-right: 20px;"></i>
 
-                                    <i class="fas fa-chevron-right"></i>
+                                    <i id="right" class=" fas fa-chevron-right"></i>
                                 </div>
                             </div>
                             <div class="isi-calender" style="margin-top: 12px; height: 100px;">
                                 <div class="row ">
-                                    <div class="col cal-box" style="height: 100px; " >
-                                        <div class="cal-body" style="width: 60px ; border: solid 1px #00b4d1;" >
-                                            <div class="Hari">Senin</div>
-                                            <div class="tanggal">15</div>
+                                    <div class="col cal-box" style="height: 100px; display: flex; justify-content: space-around;">
+                                        @for($i = 0 ;$i < 4; $i++) <div id="cal" class="hov-cal cal-body" style="width: 60px ; ">
+                                            <div id="hari" style="font-size: 16px;"></div>
+                                            <div id="tanggal" class="tanggal"></div>
                                             <div class="hover" style="display: none;">.</div>
-                                        </div>
-
                                     </div>
-                                    <div class="col cal-box" style=" height: 100px;">
-                                        <div class="cal-body" style="width: 60px ;">
-                                            <div class="Hari" style="color: #000;">Selasa</div>
-                                            <div class="tanggal" style="transform: translate(0,-5px);">16</div>
-                                            <div class="hover" style="display: block; ">.</div>
-                                        </div>
+                                    @endfor
+                                </div>
 
-                                    </div>
-                                    <div class="col cal-box" style=" height: 100px;">
-                                        <div class="cal-body" style="width: 60px ;">
-                                            <div class="Hari">Rabu</div>
-                                            <div class="tanggal">17</div>
-                                            <div class="hover" style="display: none;">.</div>
-                                        </div>
 
-                                    </div>
-                                    <div class="col cal-box tgl-4" style=" height: 100px;">
-                                        <div class="cal-body" style="width: 60px ;">
-                                            <div class="Hari">Kamis</div>
-                                            <div class="tanggal">18</div>
-                                            <div class="hover" style="display: none;">.</div>
-                                        </div>
 
-                                    </div>
+                            </div>
+                        </div>
+                    </div>
 
+
+
+                </div>
+            </div>
+            <div class="row " style="height: 250px; padding: 0px;">
+                <div class="col box-content1" style="">
+                    <div class="isi-content2 " style="height: 100%; overflow: auto;">
+                        @for ($i = 0; $i < 10 ; $i++) <div class="card-laundry card2 d-flex align-items-center" style="border:  solid1px;">
+                            <div class="row card2_body">
+                                <div class="col-xxl-3 col-xl-3 col-md-4 col-lg-2 col card2_img-body">
+                                    <h3 class="card2-img">
+                                        {{$i + 1}}
+                                    </h3>
+
+                                </div>
+                                <div class="col-xxl-5 col-xl-5 col-md-8 col-lg-6 col card2_info" style="position: relative; text-align: start;">
+                                    <h1 class="card2_title">
+                                        Pandu
+                                    </h1>
+                                    <p class="card2_desc" style="">
+                                        Layanan <Strong>Antar Jemput</Strong>
+                                    </p>
+                                    <p class="card2_desc" style="">
+                                        Alamat <Strong>Babarsari , sebelah kantor camat depok</Strong>
+                                    </p>
+                                </div>
+                                <div class="col-xxl-4 col-xl-4 col-lg-4  card2_detail" style="text-align: start; position: relative;">
+                                    <h3 class="card2_title-detail">
+                                        Jam : 17:00
+                                    </h3>
+                                    <p class="card2_desc card2_desc2" style="text-align: justify;">
+                                        Status : <Strong> Done </Strong>
+                                    </p>
+                                    <p class="card2_desc3" style="text-align: justify; display: none;">
+                                        <Strong> Done </Strong>
+                                    </p>
+                                    <button class="cek-detail">Cek Detail</button>
 
                                 </div>
                             </div>
-                        </div>
-
-
-
                     </div>
-                </div>
-                <div class="row " style="height: 250px; padding: 0px;">
-                    <div class="col box-content1" style="">
-                        <div class="isi-content2 " style="height: 100%; overflow: auto;">
-                            @for ($i = 0; $i < 10 ; $i++) <div class="card2 d-flex align-items-center" style="border:  solid1px;">
-                                <div class="row card2_body">
-                                    <div class="col-xxl-3 col-xl-3 col-md-4 col-lg-2 col card2_img-body">
-                                        <h3 class="card2-img">
-                                            {{$i + 1}}
-                                        </h3>
-
-                                    </div>
-                                    <div class="col-xxl-5 col-xl-5 col-md-8 col-lg-6 col card2_info" style="position: relative; text-align: start;">
-                                        <h1 class="card2_title">
-                                            Pandu
-                                        </h1>
-                                        <p class="card2_desc" style="">
-                                            Layanan <Strong>Antar Jemput</Strong>
-                                        </p>
-                                        <p class="card2_desc" style="">
-                                            Alamat <Strong>Babarsari , sebelah kantor camat depok</Strong>
-                                        </p>
-                                    </div>
-                                    <div class="col-xxl-4 col-xl-4 col-lg-4  card2_detail" style="text-align: start; position: relative;">
-                                        <h3 class="card2_title-detail">
-                                            Jam : 17:00
-                                        </h3>
-                                        <p class="card2_desc card2_desc2" style="text-align: justify;">
-                                            Status : <Strong> Done </Strong>
-                                        </p>
-                                        <p class="card2_desc3" style="text-align: justify; display: none;">
-                                            <Strong> Done </Strong>
-                                        </p>
-                                        <button class="cek-detail">Cek Detail</button>
-
-                                    </div>
-                                </div>
-                        </div>
-                        @endfor
-                    </div>
-                </div>
-
-                <div class="row" style="height: 250px;">
-                    <div class="col">
-                        <div class="grafik" style=" margin-top: 40px; margin-left: 10px   ;">
-                            <img style="width: 100%;" class="grafik-konten" src="{{asset('assets/images/grafik.png')}}" alt="">
-
-                        </div>
-                    </div>
+                    @endfor
                 </div>
             </div>
 
+            <div class="row" style="height: 250px;">
+                <div class="col">
+                    <div class="grafik" style=" margin-top: 40px; margin-left: 10px   ;">
+                        <img style="width: 100%;" class="grafik-konten" src="{{asset('assets/images/grafik.png')}}" alt="">
+
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
+</div>
 
 </div>
 
-@endsection
+
 
 <script>
-    
+    let a = -1;
+    let hari = document.querySelectorAll('#hari');
+    let tanggal = document.querySelectorAll("#tanggal");
+
+    function setTanggal() {
+        let temp1 = a + 1;
+        let temp2 = a;
+        const currentDate = new Date();
+        const daysOfWeek = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+        let tgl = currentDate.getDate();
+
+        hari.forEach(function(item, index) {
+            item.textContent = daysOfWeek[(currentDate.getDay() + temp1) % 7];
+            temp1++;
+        });
+
+        tanggal.forEach(function(item, index) {
+            item.textContent = (tgl + temp2) % 30 + 1;
+            temp2++;
+
+        });
+
+        
+
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+
+        const btn_right = document.getElementById('right');
+        const btn_left = document.getElementById('left');
+
+        const cal = document.querySelectorAll('#cal');
+
+        btn_right.addEventListener('click', function() {
+            a++;
+            setTanggal();
+
+        });
+
+        btn_left.addEventListener('click', function() {
+            a--;
+            setTanggal();
+        });
+
+        setTanggal();
+
+        cal.forEach(function(elem, index) {
+            elem.addEventListener('click', function() {
+                // Hapus semua elemen yang ada di dalam elemen .cal
+                const innerDivs = elem.querySelectorAll('*');
+                innerDivs.forEach(function(child) {
+                    elem.classList.add('active-cal');
+                });
+
+                // Tambahkan kelas 'active-color' ke elemen yang diklik
+                cal.forEach(function(el) {
+                    el.classList.remove('active-cal');
+                });
+                elem.classList.add('active-cal');
+            });
+        });
+
+
+        function changeView(change) {
+            order.style.display = 'none';
+            done.style.display = 'none';
+            proses.style.display = 'none';
+
+            change.style.display = 'block';
+        }
+
+        nav1.addEventListener('click', function() {
+            changeView(order);
+            nav1.classList.add('hov_nav');
+            nav2.classList.remove('hov_nav');
+            nav3.classList.remove('hov_nav');
+        });
+        nav2.addEventListener('click', function() {
+            changeView(proses);
+            nav1.classList.remove('hov_nav');
+            nav2.classList.add('hov_nav');
+            nav3.classList.remove('hov_nav');
+        });
+        nav3.addEventListener('click', function() {
+            changeView(done);
+            nav1.classList.remove('hov_nav');
+            nav2.classList.remove('hov_nav');
+            nav3.classList.add('hov_nav');
+        });
+    });
 </script>
+@endsection
