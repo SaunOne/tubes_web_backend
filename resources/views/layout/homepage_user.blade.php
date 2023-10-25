@@ -223,7 +223,6 @@
 
         </header>
         <main class="main">
-
             @yield('contents')
         </main>
 

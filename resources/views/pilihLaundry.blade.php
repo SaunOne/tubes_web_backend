@@ -1,5 +1,5 @@
 @extends('../layout/homepage_user')
-@section('contents')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +18,7 @@
     <!-- Boostrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+@section('contents')
     <style>
         * {
             font-family: 'Poppins', sans-serif;
@@ -44,16 +45,20 @@
         .cont-laundry {
             padding-left: 0;
             padding-right: 20px;
-            background-color: aqua;
             transition: background-color 0.3s;
+            box-shadow: 0px 0px 6px 1px rgb(200, 200, 200); 
+            background-color: white; 
+            border-radius: 10px; 
+            padding-left: 0px;
         }
 
         .cont-laundry:hover {
-            border: 1px solid aqua;
+            border: 3px solid #F44331;
+            box-shadow: 0px 0px 6px 1px #F44331;
         }
 
         .main {
-            background-color: rgb(250, 250, 250)
+            /* background-color: rgb(250, 250, 250) */
         }
 
         .cont-search {
@@ -295,8 +300,7 @@
                     @for ($i = 0; $i < 11; $i++)
                         <div class="col-xxl-6 d-none d-sm-flex">
                             <a href="{{ url('laundryPage') }}" class="cont-laundry-link">
-                                <div class="container cont-laundry mt-3"
-                                    style="box-shadow: 0px 0px 6px 1px rgb(200, 200, 200); background-color: white; border-radius: 10px; padding-left: 0px;">
+                                <div class="container cont-laundry mt-3">
                                     <div class="row">
                                         <div class="col-4">
                                             <img class="img-laundry"

@@ -1,5 +1,5 @@
 @extends('../layout/homepage_user')
-@section('contents')
+{{-- @section('contents') --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,13 +19,14 @@
     <!-- Boostrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+@section('contents')
     <style>
         * {
             font-family: 'Poppins', sans-serif;
         }
 
         .main {
-            background-color: rgb(250, 250, 250)
+            /* background-color: rgb(250, 250, 250) */
         }
 
         .img-laundry {
@@ -78,6 +79,21 @@
             align-items: center;
             height: 100%;
             width: 100%;
+        }
+
+        .cont-laundry {
+            padding-left: 0;
+            padding-right: 20px;
+            transition: background-color 0.3s;
+            box-shadow: 0px 0px 6px 1px rgb(200, 200, 200); 
+            background-color: white; 
+            border-radius: 10px; 
+            padding-left: 0px;
+        }
+
+        .cont-laundry:hover {
+            border: 3px solid #F44331;
+            box-shadow: 0px 0px 6px 1px #F44331;
         }
 
         .cont-laundry-link {
@@ -147,7 +163,7 @@
                         <label for="komentar">Komentar</label>
                     </div>
                     <div class="mt-4 d-flex justify-content-end">
-                        <button type="button" class="btn" style="color: red; background-color: white; width: 80px"
+                        <button type="button" class="btn" style="color: #F44331; background-color: white; width: 80px"
                             data-bs-dismiss="modal" aria-label="Close">Batal</button>
                         <button type="button" class="btn btn-success">Simpan</button>
                     </div>
@@ -304,7 +320,7 @@
                             <div class="col-xxl-6 d-none d-sm-flex">
                                 <a href="{{ url('laundryPage') }}" class="cont-laundry-link">
                                     <div class="container cont-laundry mt-3"
-                                        style="box-shadow: 0px 0px 6px 1px rgb(200, 200, 200); background-color: white; border-radius: 10px; padding-left: 0px;">
+                                        style="">
                                         <div class="row">
                                             <div class="col-4">
                                                 <img class="img-laundry"
@@ -312,11 +328,10 @@
                                             </div>
                                             <div class="col-8">
                                                 <h3 class="mt-2"><strong>Nama Laundry</strong></h3>
-                                                <p>Laundry Mudah dll dan terperdcaya dan juga akna menjadi tempat yang
+                                                <p class="mb-0" style="font-size: 12px">Laundry Mudah dll dan terperdcaya dan juga akna menjadi tempat yang
                                                     nyaman
                                                     untuk anda
                                                     semua dalam membersihkan baju.</p>
-                                                <p>
                                                 <ul class="mb-0 list-unstyled d-flex flex-row" style="color: Gold;">
                                                     <li>
                                                         <i class="fas fa-star fa-xs"></i>
@@ -336,7 +351,7 @@
                                                 </ul>
                                                 (12.042 rating) 23.414 order
                                                 </p>
-                                                <p><strong>Alamat: </strong>Jl. Babarsari 00</p>
+                                                <p class="mt-0"><strong>Alamat: </strong>Jl. Babarsari 00</p>
                                             </div>
                                         </div>
                                     </div>
@@ -346,7 +361,7 @@
                             <div class="col-xxl d-flex d-sm-none">
                                 <a href="{{ url('laundryPage') }}" class="cont-laundry-link">
                                     <div class="container cont-laundry mt-3"
-                                        style="box-shadow: 0px 0px 6px 1px rgb(200, 200, 200); background-color: white; border-radius: 10px; padding-left: 0px;">
+                                        style="">
                                         <div class="row">
                                             <div class="col-4">
                                                 <img class="img-laundry"
