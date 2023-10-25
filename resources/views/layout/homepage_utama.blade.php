@@ -143,6 +143,10 @@
             color: #07689F;
         }
 
+        .card:hover{
+            border: solid 2px #F44331;
+        }
+
         @media (max-width: 500px){
             .sign-in{
                 font-size: 13px;

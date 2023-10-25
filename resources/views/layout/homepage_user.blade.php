@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>homepage_utama</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Boostrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/homepage.css')}}">
     <style>
-        body {
-            padding: 0px;
-            margin: 0px;
-            font-family: 'Poppins', sans-serif;
-
-            font-size: 18px;
-        }
+        body {}
 
         .ut {
 
@@ -61,7 +62,7 @@
         .main {
 
 
-            padding: 0px;
+            /* padding: 0px; */
         }
 
         .bg-2 {
@@ -72,7 +73,7 @@
             background-color: #A2D5F2;
         }
 
-        .profile {
+        .profile-hp {
             height: 35px;
             width: 35px;
             overflow: hidden;
@@ -81,7 +82,7 @@
             margin: auto 12px auto 0px;
         }
 
-        .profile img {
+        .profile-hp img {
             height: 100%;
             object-fit: cover;
             margin-top: -16px;
@@ -99,10 +100,8 @@
         }
 
         .main {
-
-            /* border: solid 2px red; */
-            padding: 0px;
-            height: auto;
+            /* padding: 0px;
+            height: auto; */
         }
 
         .bg-2 {
@@ -142,17 +141,139 @@
             font-weight: 500;
             color: #07689F;
         }
-    </style>
 
+
+        .email {
+            font-size: 14px;
+            color: grey;
+        }
+
+
+        .menu {
+            text-decoration: none;
+            text-transform: uppercase;
+            position: relative;
+            color: #262626;
+        }
+
+        .menu:before {
+            top: 25px;
+            content: '';
+            width: 0;
+            height: 5px;
+            background: #00bcd4;
+            position: absolute;
+            left: 0;
+            transition: .5s;
+        }
+
+        .navbar-nav li:hover a:before {
+            width: 70%;
+            transform: translateX(0%);
+            transform: translateY(100%);
+        }
+
+
+        .in-notif {
+            display: inline;
+            position: relative;
+            z-index: 10000;
+        }
+
+
+        .show-notif {
+            background-color: white;
+            border: 1px solid grey;
+            border-radius: 10px;
+            right: 150;
+            top: 50;
+            height: 300px;
+            width: 200px;
+            padding: 15px;
+            overflow: auto;
+            scroll-snap-type: y mandatory;
+        }
+
+        .box-notif {
+            background-color: transparent;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
 </head>
 
 <body>
+
+    <!-- notif -->
+    <div id="show_notif" class="box-notif" style="display: none;position: absolute; z-index: 1100;">
+        <div class="show-notif" style=" position: fixed; z-index: 1000;">
+            <div class="row">
+                <div class="col">
+                    <h5 class="title">Nontification</h5>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="body-notif">
+                        <div class="row">
+                            <div class="cen col-3">
+                                <i class="fas fa-bell text-blue3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
+                                    ada orderan baru nihh!! silahkan diconfirmasi yaa
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="cen col-3">
+                                <i class="fas fa-bell text-blue3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
+                                    ada orderan baru nihh!! silahkan diconfirmasi yaa
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="cen col-3">
+                                <i class="fas fa-bell text-blue3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
+                                    ada orderan baru nihh!! silahkan diconfirmasi yaa
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="cen col-3">
+                                <i class="fas fa-bell text-blue3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="desc" style="font-size: 10px; margin-bottom: 10px;">
+                                    ada orderan baru nihh!! silahkan diconfirmasi yaa
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="container-fluid ut">
         <header class="app-bar" style="padding: 0px; margin: 0px;">
             <div class="container-fluid" style="position: fixed; z-index: 1000; background-color: #A2D5F2;">
                 <nav class=" navbar navbar-expand-lg " aria-label="Offcanvas navbar large">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="{{url('/')}}">
+                        <a class="navbar-brand" href="{{url('/home_user')}}">
                             <img class="img-appbar-logo" src="{{asset('assets/images/logo_horisontal.png')}}" alt="">
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
@@ -160,9 +281,9 @@
                         </button>
                         <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
                             <div class="offcanvas-header ">
-                                <div class="row" style="margin-left: 5px;">
+                                <div class="row" style="margin-left: 5px; ">
                                     <div class="col-3" style="display: flex; align-items: center;">
-                                        <div class="profile"><img style="margin-left: -8px;" src="{{asset('assets/images/profile1.jpg')}}" alt=""></div>
+                                        <a href="{{url('/profile')}}" id="pf" class="hilang profile" style="display: block;"> <img style="  margin-left: -8px;" src="{{asset('assets/images/profile1.jpg')}}" alt=""></a>
                                     </div>
                                     <div class="col-7">
                                         <div class="row">
@@ -187,24 +308,21 @@
                             <div class="offcanvas-body">
                                 <ul style="padding-top: 7px;" class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                     <li id="notif" style="display: none;" class="notif nav-item">
-                                        <a class=" nav-link" aria-current="page" href="#">Notifikasi</a>
+                                        <a class="notif nav-link" aria-current="page" href="#">Notifikasi</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" aria-current="page" href="{{url('owner')}}">Order</a>
+                                        <a class="menu nav-link" aria-current="page" href="{{url('/pilihLaundry')}}">Laundry</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{url('owner/customize_layanan')}}">Customize Layanan</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">History</a>
+                                        <a class="menu nav-link" href="#">History</a>
                                     </li>
                                     <li style="margin: 2px 10px 0px 10px;" class="hilang">
-                                        <a style="margin-top: 4px;" class="hllang nav-link" href="#"><i class="fas fa-bell text-blue3"></i></a>
+                                        <a style="margin-top: 4px;" class=" nav-link" href=""><i class="menu fa fa-bell text-blue3"></i></a>
                                     </li>
 
                                     <li class="hilang">
-                                        <a style="margin-top: 0 px;" class="nav-link" href="#">
-                                            <div class="profile" style="background-color: aliceblue;"> <img style="margin-top:0px; margin-right: 5px; object-fit: cover;" src="{{asset('assets/images/profile2.png')}}" alt="">
+                                        <a style="margin-top: 0 px;" class="nav-link" href="{{url('/profile')}}">
+                                            <div class="profile-hp" style="background-color: aliceblue;"> <img style="margin-top:0px; margin-right: 5px; object-fit: cover;" src="{{asset('assets/images/profile2.png')}}" alt="">
                                             </div>
                                         </a>
                                     </li>
@@ -221,7 +339,6 @@
 
         </header>
         <main class="main">
-
             @yield('contents')
         </main>
 
@@ -287,8 +404,26 @@
     </div>
 
 
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+    <!-- Bootstrap 5.3 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <!-- AdminLTE App -->
+    <script src="{{ asset('js/adminlte.min.js') }}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn_notif = document.getElementById('btn_notif');
+            const show_notif = document.getElementById('show_notif');
+
+            btn_notif.addEventListener('click', function() {
+                show_notif.style.display = 'block';
+            });
+            show_notif.addEventListener('click', function() {
+                show_notif.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 
 </html>

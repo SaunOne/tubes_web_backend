@@ -135,7 +135,8 @@
                 return false;
             return true;
             } else if(username.trim()==="user" && password.trim()==="user"){
-                alert("Login user!");
+                window.location.href = "{{ url('/pilihLaundry')}}"
+                return false; 
             }else if(username.trim()==="owner" && password.trim()==="owner"){
                 window.location.href = "{{ url('/owner') }}";
                 return false;
